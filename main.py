@@ -13,7 +13,8 @@ from flask import abort
 import bleach
 from flask_gravatar import Gravatar
 
-
+# setuptools==60.2.0
+# wheel==0.37.1
 # # strips invalid tags/attributes
 def strip_invalid_html(content):
     allowed_tags = ['a', 'abbr', 'acronym', 'address', 'b', 'br', 'div', 'dl', 'dt',
@@ -62,7 +63,7 @@ def admin_only(f):
         # If id is not 1 then return abort with 403 error
         if current_user.id != 1:
             return abort(403)
-        # Otherwise continue with the route function
+        # Otherwise, continue with the route function
         return f(*args, **kwargs)
     return decorated_function
 
