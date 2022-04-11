@@ -14,6 +14,7 @@ import bleach
 from flask_gravatar import Gravatar
 import os
 
+
 # setuptools==60.2.0
 # wheel==0.37.1
 # # strips invalid tags/attributes
