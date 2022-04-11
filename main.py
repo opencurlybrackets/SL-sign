@@ -136,12 +136,7 @@ def register():
 
     if register_form.validate_on_submit():
 
-        hash_invite = generate_password_hash(
-                                    register_form.invite.data,
-                                    method='pbkdf2:sha256',
-                                    salt_length=8)
-
-        if hash_invite == os.environ.get("INVITE_2022"):
+        if check_password_hash(os.environ.get("INVITE_2022"), register_form.invite.data):
 
             if User.query.filter_by(email=register_form.email.data).first():
                 flash("You've already signed up with that email, log in instead.")
