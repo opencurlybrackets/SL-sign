@@ -14,6 +14,7 @@ class CreatePostForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
+    invite = StringField('invite token', validators=[DataRequired()])
     name = StringField('Name', validators=[DataRequired()])
     email = StringField('E-Mail', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
