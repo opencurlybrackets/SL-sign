@@ -278,5 +278,12 @@ def delete_post(post_id):
     return redirect(url_for('get_all_posts'))
 
 
+@app.route('/a_users')
+@admin_only
+def get_all_users():
+    users = User.query.all()
+    return render_template("a_users.html", all_users=users)   # , current_user=current_user
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
