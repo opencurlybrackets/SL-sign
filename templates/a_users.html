@@ -8,7 +8,7 @@
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
             <h1>Studentlunch</h1>
-            <span class="subheading">register and apply</span>
+            <span class="subheading">registered Users</span>
           </div>
         </div>
       </div>
@@ -23,12 +23,9 @@
         {% for user in all_users %}
         <div class="post-preview">
 
-            <h2 class="post-title">
-              {{user.name}}
-            </h2>
-            <h3 class="post-subtitle">
-              {{user.email}}
-            </h3>
+            <p>
+              {{user.name}} {{user.email}}
+            </p>
 
         </div>
         {% endfor %}
